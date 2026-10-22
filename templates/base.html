@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titulo %}Gods Unmade{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="{% url 'inicio' %}" class="logo">
+            GODS UNMADE
+        </a>
+
+        <nav class="menu">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'juegos' %}">Juegos</a>
+            <a href="{% url 'historia' %}">Historia</a>
+            <a href="{% url 'personajes' %}">Personajes</a>
+        </nav>
+
+        <a href="#" class="boton-login">
+            Iniciar sesión
+        </a>
+    </header>
+
+    <main>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer class="pie-pagina">
+        <p>© 2026 SixSevenGames | Gods Unmade</p>
+        <p>Un universo por descubrir.</p>
+    </footer>
+
+</body>
+</html>
