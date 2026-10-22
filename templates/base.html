@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -5,37 +6,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block titulo %}Gods Unmade{% endblock %}</title>
+    <title>{% block titulo %}The Unwritten Pantheon | Gods Unmade{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
-<body>
 
-    <header class="encabezado">
-        <a href="{% url 'inicio' %}" class="logo">
-            GODS UNMADE
-        </a>
+<body
+    class="flex min-h-screen flex-col bg-[#263E5C] bg-cover bg-center bg-fixed text-[#F4E9D2]"
+    style="background-image: linear-gradient(rgba(25, 30, 43, 0.58), rgba(25, 30, 43, 0.72)), url('{% static 'img/fondo-lore.png' %}');"
+>
 
-        <nav class="menu">
-            <a href="{% url 'inicio' %}">Inicio</a>
-            <a href="{% url 'juegos' %}">Juegos</a>
-            <a href="{% url 'historia' %}">Historia</a>
-            <a href="{% url 'personajes' %}">Personajes</a>
+    <!-- Encabezado principal -->
+    <header class="border-b-2 border-[#C49A4A] bg-[#263E5C]/95">
+        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+
+            <a href="{% url 'inicio' %}"
+               class="text-lg font-bold tracking-wide text-[#F4E9D2] transition hover:text-[#C49A4A]">
+                THE UNWRITTEN PANTHEON
+            </a>
+
+            <div class="flex flex-wrap items-center gap-5 text-sm font-medium">
+
+                <a href="{% url 'inicio' %}"
+                   class="transition hover:text-[#C49A4A]">
+                    Inicio
+                </a>
+
+                <a href="{% url 'juegos' %}"
+                   class="transition hover:text-[#C49A4A]">
+                    Juegos
+                </a>
+
+                <a href="{% url 'historia' %}"
+                   class="transition hover:text-[#C49A4A]">
+                    Historia
+                </a>
+
+                <a href="{% url 'personajes' %}"
+                   class="transition hover:text-[#C49A4A]">
+                    Personajes
+                </a>
+
+                <a href="#"
+                   class="rounded-md border border-[#C49A4A] px-4 py-2 text-[#F4E9D2] transition hover:bg-[#C49A4A] hover:text-[#263E5C]">
+                    Iniciar sesión
+                </a>
+
+            </div>
         </nav>
-
-        <a href="#" class="boton-login">
-            Iniciar sesión
-        </a>
     </header>
 
-    <main>
+    <!-- Contenido de cada página -->
+    <main class="flex-1">
         {% block contenido %}
         {% endblock %}
     </main>
 
-    <footer class="pie-pagina">
-        <p>© 2026 SixSevenGames | Gods Unmade</p>
-        <p>Un universo por descubrir.</p>
+    <!-- Pie de página -->
+    <footer class="border-t-2 border-[#C49A4A] bg-[#263E5C]/95 px-6 py-6 text-center text-sm text-[#F4E9D2]">
+        <p class="font-semibold">SixSevenGames · Gods Unmade</p>
+        <p class="mt-2 text-[#E2C99A]">
+            Descubre los secretos del panteón.
+        </p>
     </footer>
 
 </body>
