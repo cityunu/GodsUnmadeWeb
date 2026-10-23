@@ -15,3 +15,6 @@ def historia(request):
 
 def personajes(request):
     return render(request, 'principal/personajes.html')
+
+def wiki(request):
+    return render(request, 'principal/wiki.html')
