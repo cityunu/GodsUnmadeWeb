@@ -1,0 +1,105 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Iniciar sesión | Gods Unmade{% endblock %}
+
+{% block contenido %}
+
+<section class="relative flex min-h-[calc(100vh-100px)] items-center justify-center overflow-hidden bg-[#171C2A] px-5 py-12">
+
+    <!-- Fondo -->
+    <div
+        class="absolute inset-0 bg-cover bg-center opacity-20"
+        style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-[#171C2A]/60 via-[#171C2A]/80 to-[#171C2A]"></div>
+
+    <!-- Formulario -->
+    <div class="relative z-10 w-full max-w-md border-2 border-[#C49A4A]/70 bg-[#202B40]/95 p-7 shadow-[6px_6px_0_#8F2528] sm:p-10">
+
+        <!-- Encabezado -->
+        <div class="mb-8 text-center">
+            <p class="font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+                SIXSEVENGAMES
+            </p>
+
+            <h1 class="mt-4 font-mono text-3xl font-black tracking-wider text-[#F4E9D2]">
+                BIENVENIDO
+            </h1>
+
+            <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                Inicia sesión para continuar tu aventura.
+            </p>
+
+            <div class="mt-5 flex items-center justify-center gap-3 text-[#C49A4A]">
+                <span class="h-px w-10 bg-[#C49A4A]"></span>
+                ◆ ◇ ◆
+                <span class="h-px w-10 bg-[#C49A4A]"></span>
+            </div>
+        </div>
+
+        <!-- Formulario visual -->
+        <form method="post" action="{% url 'login' %}" class="space-y-5">
+            {% csrf_token %}
+
+            <!-- Correo -->
+            <div>
+                <label for="correo"
+                       class="mb-2 block font-mono text-xs tracking-wider text-[#E2C99A]">
+                    CORREO ELECTRÓNICO
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    autocomplete="email"
+                    placeholder="usuario@correo.com"
+                    class="w-full border-2 border-[#C49A4A]/40 bg-[#171C2A] px-4 py-3 text-[#F4E9D2] outline-none placeholder:text-[#777D89] focus:border-[#C49A4A]"
+                    required>
+            </div>
+
+            <!-- Contraseña -->
+            <div>
+                <label for="contrasena"
+                       class="mb-2 block font-mono text-xs tracking-wider text-[#E2C99A]">
+                    CONTRASEÑA
+                </label>
+
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    autocomplete="current-password"
+                    placeholder="Ingresa tu contraseña"
+                    class="w-full border-2 border-[#C49A4A]/40 bg-[#171C2A] px-4 py-3 text-[#F4E9D2] outline-none placeholder:text-[#777D89] focus:border-[#C49A4A]"
+                    required>
+            </div>
+
+            <!-- Botón -->
+            <button
+                type="submit"
+                class="w-full border-2 border-[#C49A4A] bg-[#8F2528] px-5 py-3 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] shadow-[4px_4px_0_#C49A4A] transition hover:translate-y-1 hover:shadow-none">
+                INICIAR SESIÓN
+            </button>
+        </form>
+
+        <!-- Aviso provisional -->
+        <p class="mt-6 border-l-2 border-[#C49A4A]/60 pl-3 text-xs leading-6 text-[#B9B1A2]">
+            El sistema de cuentas estará disponible próximamente.
+        </p>
+
+        <!-- Regresar -->
+        <div class="mt-7 text-center">
+            <a href="{% url 'inicio' %}"
+               class="font-mono text-xs tracking-wider text-[#C49A4A] transition hover:text-[#F4E9D2]">
+                ← VOLVER AL INICIO
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,5 +1,196 @@
+
 {% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Personajes | Gods Unmade{% endblock %}
 
 {% block contenido %}
+
+<!-- ENCABEZADO DE LA SECCIÓN -->
+<section class="relative overflow-hidden border-b-2 border-[#C49A4A]/60 bg-[#171C2A]">
+
+    <div class="absolute inset-0 bg-cover bg-center opacity-20"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-16 text-center md:py-20">
+
+        <p class="mb-4 font-mono text-xs tracking-[0.4em] text-[#C49A4A]">
+            EL ARCHIVO DEL PANTEÓN
+        </p>
+
+        <h1 class="font-mono text-4xl font-black tracking-wider text-[#F4E9D2] md:text-6xl">
+            PERSONAJES
+        </h1>
+
+        <div class="mx-auto my-6 flex items-center justify-center gap-3 text-[#C49A4A]">
+            <span class="h-px w-12 bg-[#C49A4A]"></span>
+            ◆ ◇ ◆
+            <span class="h-px w-12 bg-[#C49A4A]"></span>
+        </div>
+
+        <p class="mx-auto max-w-2xl leading-8 text-[#D5C8AD]">
+            Conoce a quienes forman parte del universo de Gods Unmade.
+            Descubre sus historias y el papel que desempeñan en este mundo.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- PERSONAJE DESTACADO -->
+<section class="mx-auto max-w-7xl px-6 py-16">
+
+    <div class="mb-8 flex items-center gap-4">
+        <span class="h-8 w-2 bg-[#8F2528]"></span>
+        <div>
+            <p class="font-mono text-xs tracking-[0.25em] text-[#C49A4A]">
+                REGISTRO PRINCIPAL
+            </p>
+            <h2 class="mt-1 font-mono text-2xl font-bold text-[#F4E9D2]">
+                PROTAGONISTA
+            </h2>
+        </div>
+    </div>
+
+    <article class="grid overflow-hidden border-2 border-[#C49A4A]/70 bg-[#202B40] md:grid-cols-2">
+
+        <!-- Espacio para ilustración -->
+        <div class="relative flex min-h-[320px] items-center justify-center overflow-hidden border-b-2 border-[#C49A4A]/50 bg-[#171C2A] p-8 md:border-b-0 md:border-r-2">
+
+            <div class="absolute inset-4 border border-[#8F2528]/70"></div>
+
+            <img
+                src="{% static 'img/protagonista.png' %}"
+                alt="Ilustración del protagonista de Gods Unmade"
+                class="relative z-10 max-h-[400px] max-w-full object-contain"
+                onerror="this.style.display='none'"
+            >
+
+            <span class="absolute bottom-6 left-0 right-0 text-center font-mono text-[10px] tracking-[0.3em] text-[#C49A4A]">
+                GODS UNMADE · REGISTRO 001
+            </span>
+        </div>
+
+        <!-- Información provisional -->
+        <div class="flex flex-col justify-center p-7 md:p-10">
+
+            <span class="mb-4 w-fit border border-[#8F2528] bg-[#8F2528]/20 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                PERSONAJE PRINCIPAL
+            </span>
+
+            <h3 class="font-mono text-3xl font-black text-[#F4E9D2]">
+                Nombre por definir
+            </h3>
+
+            <div class="my-5 h-1 w-16 bg-[#C49A4A]"></div>
+
+            <p class="leading-8 text-[#D5C8AD]">
+                Aquí agregaremos la descripción oficial del protagonista,
+                su historia y su importancia dentro del universo del juego.
+            </p>
+
+            <div class="mt-7 border-l-4 border-[#8F2528] bg-[#171C2A]/70 p-4">
+                <p class="font-mono text-xs tracking-wider text-[#C49A4A]">
+                    INFORMACIÓN DEL PERSONAJE
+                </p>
+                <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
+                    Historia, características y otros detalles pendientes
+                    de confirmar con el equipo de desarrollo.
+                </p>
+            </div>
+
+        </div>
+    </article>
+
+</section>
+
+
+<!-- GALERÍA -->
+<section class="border-y-2 border-[#C49A4A]/50 bg-[#202B40]/60">
+
+    <div class="mx-auto max-w-7xl px-6 py-16">
+
+        <div class="mb-10">
+            <p class="mb-3 font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                ARCHIVOS DEL UNIVERSO
+            </p>
+
+            <h2 class="font-mono text-2xl font-black text-[#F4E9D2] md:text-3xl">
+                OTROS PERSONAJES
+            </h2>
+
+            <p class="mt-3 max-w-2xl leading-7 text-[#B9B1A2]">
+                Esta galería se completará cuando estén disponibles las
+                ilustraciones y descripciones oficiales.
+            </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Tarjeta provisional 1 -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="flex h-56 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+                    <span class="font-mono text-5xl text-[#C49A4A]/60">?</span>
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 002
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        La información de este personaje se añadirá más adelante.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tarjeta provisional 2 -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="flex h-56 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#40242C]/40">
+                    <span class="font-mono text-5xl text-[#C49A4A]/60">?</span>
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 003
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        Espacio reservado para otro personaje del juego.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tarjeta provisional 3 -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="flex h-56 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#49402B]/30">
+                    <span class="font-mono text-5xl text-[#C49A4A]/60">?</span>
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 004
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        Aquí presentaremos otro personaje cuando se confirme su información.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}

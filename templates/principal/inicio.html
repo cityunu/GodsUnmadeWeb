@@ -1,5 +1,286 @@
+
 {% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Gods Unmade{% endblock %}
 
 {% block contenido %}
+
+<!-- PORTADA PRINCIPAL -->
+<section class="relative overflow-hidden border-b-4 border-[#C49A4A] bg-[#171C2A]">
+
+    <!-- Decoración del fondo -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-35"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#171C2A] via-[#171C2A]/80 to-[#171C2A]/40"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-6 py-16 md:grid-cols-2 md:py-24">
+
+        <!-- Protagonista -->
+        <div class="relative mx-auto w-full max-w-lg">
+
+            <div class="absolute -inset-3 border-2 border-[#C49A4A]/60"></div>
+            <div class="absolute -inset-5 border border-[#8F2528]/70"></div>
+
+            <div class="relative overflow-hidden border-2 border-[#C49A4A] bg-[#202B40]">
+                <img
+                    src="{% static 'img/protagonista.png' %}"
+                    alt="Protagonista de Gods Unmade"
+                    class="h-80 w-full object-contain object-bottom md:h-[430px]"
+                >
+
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#171C2A] to-transparent p-5 pt-16">
+                    <p class="font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                        UN MUNDO OLVIDADO
+                    </p>
+                </div>
+            </div>
+
+            <!-- Adornos de esquina -->
+            <span class="absolute -left-4 -top-4 text-3xl text-[#C49A4A]">✦</span>
+            <span class="absolute -bottom-4 -right-4 text-3xl text-[#C49A4A]">✦</span>
+        </div>
+
+        <!-- Presentación del videojuego -->
+        <div class="relative py-4">
+
+            <p class="mb-4 font-mono text-xs tracking-[0.35em] text-[#C49A4A] md:text-sm">
+                SIXSEVENGAMES PRESENTA
+            </p>
+
+            <h1 class="font-mono text-4xl font-black leading-tight tracking-tight text-[#F4E9D2] sm:text-5xl lg:text-7xl">
+                GODS
+                <span class="block text-[#8F2528]">UNMADE</span>
+            </h1>
+
+            <div class="my-6 flex items-center gap-3">
+                <span class="h-1 w-16 bg-[#8F2528]"></span>
+                <!--<span class="text-sm tracking-[0.3em] text-[#C49A4A]">EL PANTEÓN OLVIDADO</span>-->
+            </div>
+
+            <p class="max-w-xl text-base leading-8 text-[#D5C8AD] md:text-lg">
+                Explora las ruinas de un mundo inspirado en la mitología griega.
+                Enfréntate a peligros, descubre secretos y desbloquea nuevas
+                habilidades mientras avanzas por tierras olvidadas.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+                <a href="#el-juego"
+                   class="border-2 border-[#C49A4A] bg-[#8F2528] px-6 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] shadow-[4px_4px_0_#080B12] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                    DESCUBRIR EL JUEGO →
+                </a>
+
+                <a href="{% url 'historia' %}"
+                   class="border-2 border-[#C49A4A]/60 px-6 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] transition hover:bg-[#C49A4A] hover:text-[#171C2A]">
+                    CONOCER LA HISTORIA
+                </a>
+
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs text-[#B9B1A2]">
+                <span>◆ AVENTURA</span>
+                <span>◆ EXPLORACIÓN</span>
+                <span>◆ METROIDVANIA</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="h-2 bg-[#8F2528]"></div>
+    <div class="h-1 bg-[#C49A4A]"></div>
+
+</section>
+
+
+<!-- INTRODUCCIÓN AL JUEGO -->
+<section id="el-juego" class="mx-auto max-w-7xl px-6 py-20">
+
+    <div class="mb-12 text-center">
+        <p class="mb-3 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+            MÁS ALLÁ DE LAS RUINAS
+        </p>
+
+        <h2 class="font-mono text-3xl font-black text-[#F4E9D2] md:text-4xl">
+            UN MUNDO POR DESCUBRIR
+        </h2>
+
+        <div class="mx-auto mt-5 h-1 w-24 bg-[#8F2528]"></div>
+    </div>
+
+    <div class="mx-auto max-w-3xl text-center">
+        <p class="text-base leading-8 text-[#D5C8AD] md:text-lg">
+            Gods Unmade es un videojuego de aventura y exploración en 2D
+            inspirado en la mitología griega. Recorre escenarios misteriosos,
+            combate contra enemigos y descubre nuevas habilidades que te
+            permitirán acceder a lugares antes inaccesibles.
+        </p>
+    </div>
+
+    <!-- Características -->
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                01
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                EXPLORACIÓN
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Recorre ruinas, descubre caminos ocultos y encuentra los
+                secretos que esconde cada escenario.
+            </p>
+        </article>
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                02
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                COMBATE
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Enfréntate a enemigos y supera los peligros que se
+                interponen en tu camino.
+            </p>
+        </article>
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                03
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                PROGRESIÓN
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Desbloquea habilidades y utilízalas para alcanzar nuevas
+                zonas y continuar tu aventura.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- GALERÍA DEL JUEGO -->
+<section class="border-y-2 border-[#C49A4A]/60 bg-[#202B40]/80">
+
+    <div class="mx-auto max-w-7xl px-6 py-20">
+
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="mb-3 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+                    ECOS DE OTRO TIEMPO
+                </p>
+
+                <h2 class="font-mono text-3xl font-black text-[#F4E9D2]">
+                    EL MUNDO DE GODS UNMADE
+                </h2>
+            </div>
+
+            <span class="font-mono text-xs text-[#B9B1A2]">
+                EXPLORA · LUCHA · DESCUBRE
+            </span>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+
+            <article class="border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A]">
+                <div class="flex h-48 items-center justify-center overflow-hidden bg-[#263E5C]">
+                    <img src="{% static 'img/captura-mundo.png' %}"
+                         alt="Escenarios de Gods Unmade"
+                         class="h-full w-full object-cover"
+                         onerror="this.style.display='none'">
+                    <span class="p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        ESCENARIOS Y RUINAS
+                    </span>
+                </div>
+                <h3 class="px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    TIERRAS OLVIDADAS
+                </h3>
+            </article>
+
+            <article class="border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A]">
+                <div class="flex h-48 items-center justify-center overflow-hidden bg-[#40242C]">
+                    <img src="{% static 'img/captura-combate.png' %}"
+                         alt="Combate en Gods Unmade"
+                         class="h-full w-full object-cover"
+                         onerror="this.style.display='none'">
+                    <span class="p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        ENEMIGOS Y DESAFÍOS
+                    </span>
+                </div>
+                <h3 class="px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    PRUEBA TU FUERZA
+                </h3>
+            </article>
+
+            <article class="border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A]">
+                <div class="flex h-48 items-center justify-center overflow-hidden bg-[#49402B]">
+                    <img src="{% static 'img/captura-habilidades.png' %}"
+                         alt="Habilidades del protagonista"
+                         class="h-full w-full object-cover"
+                         onerror="this.style.display='none'">
+                    <span class="p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        HABILIDADES Y PROGRESIÓN
+                    </span>
+                </div>
+                <h3 class="px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    ABRE NUEVOS CAMINOS
+                </h3>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HISTORIA Y LLAMADO A LA ACCIÓN -->
+<section class="relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-cover bg-center opacity-20"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="relative mx-auto max-w-4xl px-6 py-20 text-center">
+
+        <p class="mb-4 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+            CADA RUINA GUARDA UN SECRETO
+        </p>
+
+        <h2 class="font-mono text-3xl font-black leading-tight text-[#F4E9D2] md:text-5xl">
+            ¿QUÉ SE ESCONDE<br>
+            TRAS EL PANTEÓN?
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-2xl leading-8 text-[#D5C8AD]">
+            Descubre el trasfondo del universo de Gods Unmade, conoce a sus
+            personajes y adéntrate en los misterios de este mundo.
+        </p>
+
+        <a href="{% url 'historia' %}"
+           class="mt-8 inline-block border-2 border-[#C49A4A] bg-[#8F2528] px-8 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] shadow-[4px_4px_0_#080B12] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+            EXPLORAR LA HISTORIA →
+        </a>
+
+    </div>
+
+</section>
 
 {% endblock %}

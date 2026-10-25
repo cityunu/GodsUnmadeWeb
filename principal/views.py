@@ -18,3 +18,6 @@ def personajes(request):
 
 def wiki(request):
     return render(request, 'principal/wiki.html')
+
+def login(request):
+    return render(request, 'principal/login.html')
