@@ -1,5 +1,252 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Personajes | Gods Unmade{% endblock %}
 
 {% block contenido %}
+
+<!-- ENCABEZADO DE LA SECCIÓN -->
+<section class="relative overflow-hidden border-b-2 border-[#C49A4A]/60 bg-[#171C2A]">
+
+    <div class="absolute inset-0 bg-cover bg-center opacity-20"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-16 text-center md:py-20">
+
+        <p class="mb-4 font-mono text-xs tracking-[0.4em] text-[#C49A4A]">
+            REGISTRO DE PERSONAJES
+        </p>
+
+        <h1 class="font-mono text-4xl font-black tracking-wider text-[#F4E9D2] md:text-6xl">
+            PERSONAJES
+        </h1>
+
+        <div class="mx-auto my-6 flex items-center justify-center gap-3 text-[#C49A4A]">
+            <span class="h-px w-12 bg-[#C49A4A]"></span>
+            ◆ ◇ ◆
+            <span class="h-px w-12 bg-[#C49A4A]"></span>
+        </div>
+
+        <p class="mx-auto max-w-2xl leading-8 text-[#D5C8AD]">
+            Es un ser semihumano marcado por grietas divinas, capaz de encontrar
+            y restaurar los Aspectos Divinos perdidos. Su recorrido comienza en
+            Camino Roto, donde explora ruinas y santuarios en busca de estos
+            fragmentos y de una forma de avanzar por el mundo.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- PERSONAJE DESTACADO -->
+<section class="mx-auto max-w-7xl px-6 py-16">
+
+    <div class="mb-8 flex items-center gap-4">
+        <span class="h-8 w-2 bg-[#8F2528]"></span>
+        <div>
+            <p class="font-mono text-xs tracking-[0.25em] text-[#C49A4A]">
+                REGISTRO PRINCIPAL
+            </p>
+            <h2 class="mt-1 font-mono text-2xl font-bold text-[#F4E9D2]">
+                PROTAGONISTA
+            </h2>
+        </div>
+    </div>
+
+    <article class="grid overflow-hidden border-2 border-[#C49A4A]/70 bg-[#202B40] md:grid-cols-2">
+
+        <!-- Espacio para ilustración -->
+        <div class="relative flex min-h-[320px] items-center justify-center overflow-hidden border-b-2 border-[#C49A4A]/50 bg-[#171C2A] p-8 md:border-b-0 md:border-r-2">
+
+            <div class="absolute inset-4 border border-[#8F2528]/70"></div>
+
+            <img
+                src="{% static 'img/perso/protagonista.png' %}"
+                alt="Ilustración del protagonista de Gods Unmade"
+                class="relative z-10 max-h-[400px] max-w-full object-contain"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="h-56 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+  
+</div>
+
+            <span class="absolute bottom-6 left-0 right-0 text-center font-mono text-[10px] tracking-[0.3em] text-[#C49A4A]">
+                GODS UNMADE · REGISTRO 001
+            </span>
+        </div>
+
+        <!-- Información del protagonista -->
+        <div class="flex flex-col justify-center p-7 md:p-10">
+
+            <span class="mb-4 w-fit border border-[#8F2528] bg-[#8F2528]/20 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                PERSONAJE PRINCIPAL
+            </span>
+
+            <h3 class="font-mono text-3xl font-black text-[#F4E9D2]">
+                Protagonista
+            </h3>
+
+            <div class="my-5 h-1 w-16 bg-[#C49A4A]"></div>
+
+            <p class="leading-8 text-[#D5C8AD]">
+                Es un ser semihumano marcado por grietas divinas que posee
+                la capacidad de encontrar y restaurar los Aspectos Divinos
+                perdidos. Su misión lo lleva a recorrer ruinas y santuarios
+                para recuperar estos fragmentos y avanzar por el mundo.
+            </p>
+
+            <div class="mt-7 border-l-4 border-[#8F2528] bg-[#171C2A]/70 p-4">
+                <p class="font-mono text-xs tracking-wider text-[#C49A4A]">
+                    OBJETIVO PRINCIPAL
+                </p>
+                <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
+                    Recuperar el Aspecto Divino de Hermes para desbloquear
+                    el dash, acceder a nuevas rutas y continuar su recorrido.
+                </p>
+            </div>
+
+        </div>
+    </article>
+
+</section>
+
+
+<!-- GALERÍA DE PERSONAJES Y ENEMIGOS -->
+<section class="border-y-2 border-[#C49A4A]/50 bg-[#202B40]/60">
+
+    <div class="mx-auto max-w-7xl px-6 py-16">
+
+        <div class="mb-10">
+            <p class="mb-3 font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                HABITANTES DE LAS RUINAS
+            </p>
+
+            <h2 class="font-mono text-2xl font-black text-[#F4E9D2] md:text-3xl">
+                ENEMIGOS Y GUARDIANES
+            </h2>
+
+            <p class="mt-3 max-w-2xl leading-7 text-[#B9B1A2]">
+                Las criaturas y los guardianes de las ruinas representan obstáculos
+                que el protagonista deberá superar mediante el combate, el movimiento
+                y la exploración de los escenarios.
+            </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Minotauro -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+               <div class="h-56 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+                    <img
+                        src="{% static 'img/perso/Minotauro.jpg' %}"
+                        alt="Camino Roto, escenario de Gods Unmade"
+                        class="h-full w-full object-cover">
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 002
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Minotauro
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        Enemigo terrestre pesado que obliga al jugador a
+                        aprender el ritmo del combate y a esquivar sus ataques.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Arpía -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="h-56 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+                    <img
+                        src="{% static 'img/perso/Arpia.jpg' %}"
+                        alt="Camino Roto, escenario de Gods Unmade"
+                        class="h-full w-full object-cover">
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 003
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Arpía
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        Enemigo volador que presiona al jugador desde el aire
+                        y permite practicar ataques en distintas direcciones.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Medusa -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+               <div class="h-56 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+                    <img
+                        src="{% static 'img/perso/Medusa.jpg' %}"
+                        alt="Camino Roto, escenario de Gods Unmade"
+                        class="h-full w-full object-cover">
+                </div>
+
+                <div class="p-5">
+                    <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        REGISTRO 004
+                    </p>
+                    <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
+                        Medusa
+                    </h3>
+                    <p class="mt-2 text-sm leading-6 text-[#B9B1A2]">
+                        Enemigo serpentino que aporta variedad visual y
+                        representa una amenaza intermedia dentro de las ruinas.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Custodio -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528] sm:col-span-2 lg:col-span-3">
+
+                <div class="grid md:grid-cols-2">
+
+                    <div class="h-56 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/40">
+                        <img
+                            src="{% static 'img/perso/Custodio.jpg' %}"
+                            alt="Camino Roto, escenario de Gods Unmade"
+                            class="h-full w-full object-cover">
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                            REGISTRO 005
+                        </p>
+
+                        <h3 class="mt-2 font-mono text-xl font-bold text-[#F4E9D2]">
+                            Custodio
+                        </h3>
+
+                        <span class="mt-3 inline-block border border-[#8F2528] bg-[#8F2528]/20 px-3 py-1 font-mono text-xs text-[#E2C99A]">
+                            JEFE DE LA DEMO
+                        </span>
+
+                        <p class="mt-4 text-sm leading-7 text-[#B9B1A2]">
+                            Guardián principal de la demo y el desafío más
+                            importante antes del cierre narrativo de esta
+                            primera región.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}

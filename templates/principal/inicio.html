@@ -1,5 +1,327 @@
+
 {% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Gods Unmade{% endblock %}
 
 {% block contenido %}
+
+<!-- PORTADA PRINCIPAL -->
+<section class="relative overflow-hidden border-b-4 border-[#C49A4A] bg-[#171C2A]">
+
+    <!-- Decoración del fondo -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-35"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#171C2A] via-[#171C2A]/80 to-[#171C2A]/40"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-6 py-16 md:grid-cols-2 md:py-24">
+
+        <!-- Protagonista -->
+      
+        <div class="relative mx-auto w-full max-w-lg">
+
+            <!-- Marcos decorativos -->
+            <div class="absolute -inset-3 border-2 border-[#C49A4A]/60"></div>
+            <div class="absolute -inset-5 border border-[#8F2528]/70"></div>
+
+            <!-- Imagen principal -->
+            <div class="group relative overflow-hidden border-2 border-[#C49A4A] bg-[#202B40]">
+
+                <img
+                    src="{% static 'img/ini/Portada3.jpg' %}"
+                    alt="Protagonista de Gods Unmade"
+                    class="h-[380px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[420px] md:h-[460px]"
+                >
+
+                <!-- Degradado inferior -->
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#171C2A] via-[#171C2A]/60 to-transparent p-5 pt-20">
+                    <p class="font-mono text-xs tracking-[0.25em] text-[#C49A4A]">
+                        UN SER MARCADO POR GRIETAS DIVINAS
+                    </p>
+                </div>
+            </div>
+
+            <!-- Adornos de esquina -->
+            <span class="absolute -left-4 -top-4 text-3xl text-[#C49A4A]">✦</span>
+            <span class="absolute -bottom-4 -right-4 text-3xl text-[#C49A4A]">✦</span>
+
+        </div>
+
+
+        <!-- Presentación del videojuego -->
+        <div class="relative py-4">
+
+            <p class="mb-4 font-mono text-xs tracking-[0.35em] text-[#C49A4A] md:text-sm">
+                SIXSEVENGAMES PRESENTA
+            </p>
+
+            <h1 class="font-mono text-4xl font-black leading-tight tracking-tight text-[#F4E9D2] sm:text-5xl lg:text-7xl">
+                GODS
+                <span class="block text-[#8F2528]">UNMADE</span>
+            </h1>
+
+            <div class="my-6 flex items-center gap-3">
+                <span class="h-1 w-16 bg-[#8F2528]"></span>
+            </div>
+
+            <p class="max-w-xl text-base leading-8 text-[#D5C8AD] md:text-lg">
+                Los dioses comienzan a perder fragmentos de su identidad y sus poderes,
+                conocidos como Aspectos Divinos. Un ser semihumano marcado por grietas
+                divinas deberá encontrarlos y restaurarlos mientras explora un mundo
+                alterado por esta fractura.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+                <a href="#el-juego"
+                   class="border-2 border-[#C49A4A] bg-[#8F2528] px-6 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] shadow-[4px_4px_0_#080B12] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                    DESCUBRIR EL JUEGO →
+                </a>
+
+                <a href="{% url 'historia' %}"
+                   class="border-2 border-[#C49A4A]/60 px-6 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] transition hover:bg-[#C49A4A] hover:text-[#171C2A]">
+                    CONOCER LA HISTORIA
+                </a>
+
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs text-[#B9B1A2]">
+                <span>◆ ACCIÓN</span>
+                <span>◆ AVENTURA</span>
+                <span>◆ METROIDVANIA 2D</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="h-2 bg-[#8F2528]"></div>
+    <div class="h-1 bg-[#C49A4A]"></div>
+
+</section>
+
+
+<!-- INTRODUCCIÓN AL JUEGO -->
+<section id="el-juego" class="mx-auto max-w-7xl px-6 py-20">
+
+    <div class="mb-12 text-center">
+        <p class="mb-3 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+           EL ORIGEN DE LA FRACTURA
+        </p>
+
+        <h2 class="font-mono text-3xl font-black text-[#F4E9D2] md:text-4xl">
+            RECUPERA LOS ASPECTOS DIVINOS
+        </h2>
+
+        <div class="mx-auto mt-5 h-1 w-24 bg-[#8F2528]"></div>
+    </div>
+
+    <div class="mx-auto max-w-3xl text-center">
+        <p class="text-base leading-8 text-[#D5C8AD] md:text-lg">
+            Gods Unmade es un videojuego 2D de acción y aventura del género
+            Metroidvania, inspirado en la mitología griega. Explora un mapa
+            compuesto por habitaciones conectadas, derrota enemigos, evita
+            obstáculos y busca los Aspectos Divinos que te permitirán progresar.
+        </p>
+    </div>
+
+    <!-- Características -->
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                01
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                EXPLORACIÓN
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Recorre habitaciones conectadas, explora ruinas, patios y
+                corredores, y encuentra caminos que no puedes atravesar al inicio.
+            </p>
+        </article>
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                02
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                COMBATE
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Enfréntate a enemigos terrestres y voladores mediante ataques
+                direccionales. Aprende a combatir y esquivar para superar los desafíos.
+            </p>
+        </article>
+
+        <article class="group border-2 border-[#C49A4A]/50 bg-[#202B40] p-5 transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="mb-5 flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#171C2A] font-mono text-xl text-[#C49A4A]">
+                03
+            </div>
+
+            <h3 class="mb-3 font-mono text-lg font-bold text-[#F4E9D2]">
+                PROGRESIÓN
+            </h3>
+
+            <p class="text-sm leading-7 text-[#B9B1A2]">
+                Encuentra el Aspecto Divino de Hermes para desbloquear el dash,
+                superar obstáculos y alcanzar caminos que antes eran inaccesibles.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- GALERÍA DEL JUEGO -->
+<section class="border-y-2 border-[#C49A4A]/60 bg-[#202B40]/80">
+
+    <div class="mx-auto max-w-7xl px-6 py-20">
+
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="mb-3 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+                    ESCENARIOS DE LA DEMO
+                </p>
+
+                <h2 class="font-mono text-3xl font-black text-[#F4E9D2]">
+                    EL MUNDO DE GODS UNMADE
+                </h2>
+            </div>
+
+            <span class="font-mono text-xs text-[#B9B1A2]">
+                EXPLORA · COMBATE · AVANZA
+            </span>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+
+            <!-- Tarjeta: Exploración -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 w-full overflow-hidden bg-[#263E5C]">
+                    <img
+                        src="{% static 'img/ini/Exploracion.jpg' %}"
+                        alt="Escenarios de Gods Unmade"
+                        class="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <span class="absolute inset-0 hidden items-center justify-center p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        RUINAS, PATIOS Y CORREDORES
+                    </span>
+                </div>
+
+                <h3 class="break-words px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    CAMINO ROTO
+                </h3>
+
+                <p class="px-3 pb-4 text-sm leading-relaxed text-[#D5C8AD]">
+                    Explora antiguas ruinas, descubre caminos ocultos y recorre
+                    los escenarios que dan inicio a tu aventura.
+                </p>
+            </article>
+
+
+            <!-- Tarjeta: Combate -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 w-full overflow-hidden bg-[#40242C]">
+                    <img
+                        src="{% static 'img/ini/Combate.jpg' %}"
+                        alt="Combate contra enemigos en Gods Unmade"
+                        class="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <span class="absolute inset-0 hidden items-center justify-center p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        ENEMIGOS Y DESAFÍOS
+                    </span>
+                </div>
+
+                <h3 class="break-words px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    COMBATE Y SUPERVIVENCIA
+                </h3>
+
+                <p class="px-3 pb-4 text-sm leading-relaxed text-[#D5C8AD]">
+                    Enfréntate a los enemigos que encuentres durante tu recorrido
+                    y demuestra tu habilidad para superar cada desafío.
+                </p>
+            </article>
+
+
+            <!-- Tarjeta: Habilidades -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/60 bg-[#171C2A] p-2 transition hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 w-full overflow-hidden bg-[#49402B]">
+                    <img
+                        src="{% static 'img/ini/Habilidades.jpg' %}"
+                        alt="Progresión y habilidades del protagonista"
+                        class="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <span class="absolute inset-0 hidden items-center justify-center p-4 text-center font-mono text-xs text-[#D5C8AD]">
+                        ASPECTO DIVINO DE HERMES
+                    </span>
+                </div>
+
+                <h3 class="break-words px-3 pb-3 pt-4 font-mono text-sm font-bold text-[#F4E9D2]">
+                    SANTUARIO DE HERMES
+                </h3>
+
+                <p class="px-3 pb-4 text-sm leading-relaxed text-[#D5C8AD]">
+                    Descubre el Aspecto Divino de Hermes, desbloquea el dash y utiliza
+                    esta nueva habilidad para continuar tu recorrido.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- HISTORIA Y LLAMADO A LA ACCIÓN -->
+<section class="relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-cover bg-center opacity-20"
+         style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="relative mx-auto max-w-4xl px-6 py-20 text-center">
+
+        <p class="mb-4 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+            EL MISTERIO DE LA FRACTURA DIVINA
+        </p>
+
+        <h2 class="font-mono text-3xl font-black leading-tight text-[#F4E9D2] md:text-5xl">
+            ¿QUÉ OCURRE<br>
+            CON LOS DIOSES?
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-2xl leading-8 text-[#D5C8AD]">
+            La pérdida de los Aspectos Divinos altera el mundo y sus antiguos
+            santuarios. Acompaña al protagonista en su recorrido por Camino Roto,
+            recupera los fragmentos perdidos y descubre la amenaza que se oculta
+            detrás de la fractura divina.
+        </p>
+
+        <a href="{% url 'historia' %}"
+           class="mt-8 inline-block border-2 border-[#C49A4A] bg-[#8F2528] px-8 py-4 font-mono text-sm font-bold tracking-wider text-[#F4E9D2] shadow-[4px_4px_0_#080B12] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+            EXPLORAR LA HISTORIA →
+        </a>
+
+    </div>
+
+</section>
 
 {% endblock %}

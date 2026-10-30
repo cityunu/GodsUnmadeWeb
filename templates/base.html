@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block titulo %}The Unwritten Pantheon | Gods Unmade{% endblock %}</title>
+    <title>{% block titulo %} Gods Unmade{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
@@ -21,77 +21,80 @@
     <div class="fixed inset-0 -z-10 bg-[#171C2A]/70"></div>
 
     <!-- Encabezado -->
-    <header class="relative z-10 border-b-4 border-[#C49A4A] bg-[#202B40]/95">
+    
+<!-- HEADER FIJO Y ADAPTABLE -->
+<header class="sticky top-0 z-50 border-b-4 border-[#C49A4A] bg-[#202B40]/95 shadow-[0_4px_0_#8F2528] backdrop-blur-sm">
 
-        <!-- Línea decorativa -->
-        <div class="h-1 bg-[#8F2528]"></div>
+    <div class="h-1 bg-[#8F2528]"></div>
 
-        <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-6 py-5">
+    <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4">
 
-            <!-- Identidad del sitio -->
-            <a href="{% url 'inicio' %}"
-               class="group flex items-center gap-3">
+        <!-- Logo -->
+        <a href="{% url 'inicio' %}" class="group flex items-center gap-2">
 
-                <span class="flex h-12 w-12 items-center justify-center border-2 border-[#C49A4A] bg-[#8F2528] text-2xl text-[#F4E9D2] shadow-[4px_4px_0_#111827] transition group-hover:-translate-y-1">
-                    ✦
+            <span class="flex h-9 w-9 items-center justify-center border-2 border-[#C49A4A] bg-[#8F2528] text-xl text-[#F4E9D2] shadow-[3px_3px_0_#111827] transition group-hover:-translate-y-1 md:h-12 md:w-12 md:text-2xl">
+                ✦
+            </span>
+
+            <span class="flex flex-col">
+                <span class="font-mono text-sm font-black tracking-wide text-[#F4E9D2] transition group-hover:text-[#E2C99A] md:text-lg">
+                    GODS
                 </span>
-
-                <span class="flex flex-col">
-                    <span class="font-mono text-lg font-black tracking-wider text-[#F4E9D2] transition group-hover:text-[#E2C99A] ">
-                        GODS 
-                    </span>
-                    <span class="font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
-                       U N M A D E
-                    </span>
+                <span class="font-mono text-[9px] tracking-[0.25em] text-[#C49A4A] md:text-xs">
+                    U N M A D E
                 </span>
+            </span>
+        </a>
+
+        <!-- Menú -->
+        <div class="flex flex-wrap items-center gap-1 font-mono text-[10px] sm:gap-2 sm:text-xs md:gap-3 md:text-sm">
+
+            <a href="{% url 'inicio' %}" class="border-b-2 border-transparent px-2 py-2 transition hover:border-[#C49A4A] hover:text-[#E2C99A] md:px-3">
+                INICIO
             </a>
 
-            <!-- Navegación -->
-            <div class="flex flex-wrap items-center gap-2 font-mono text-sm">
+            <a href="{% url 'historia' %}" class="border-b-2 border-transparent px-2 py-2 transition hover:border-[#C49A4A] hover:text-[#E2C99A] md:px-3">
+                HISTORIA
+            </a>
 
-                <a href="{% url 'inicio' %}"
-                   class="border-b-2 border-transparent px-3 py-3 transition hover:border-[#C49A4A] hover:bg-[#F4E9D2]/5 hover:text-[#E2C99A]">
-                    INICIO
-                </a>
+            <a href="{% url 'personajes' %}" class="border-b-2 border-transparent px-2 py-2 transition hover:border-[#C49A4A] hover:text-[#E2C99A] md:px-3">
+                PERSONAJES
+            </a>
 
-                <a href="{% url 'juegos' %}"
-                   class="border-b-2 border-transparent px-3 py-3 transition hover:border-[#C49A4A] hover:bg-[#F4E9D2]/5 hover:text-[#E2C99A]">
-                    JUEGOS
-                </a>
+            <a href="{% url 'wiki' %}" class="border-b-2 border-transparent px-2 py-2 transition hover:border-[#C49A4A] hover:text-[#E2C99A] md:px-3">
+                WIKI
+            </a>
 
-                <a href="{% url 'historia' %}"
-                   class="border-b-2 border-transparent px-3 py-3 transition hover:border-[#C49A4A] hover:bg-[#F4E9D2]/5 hover:text-[#E2C99A]">
-                    HISTORIA
-                </a>
+           <a href="{% url 'top' %}"
+                class="group relative inline-flex items-center gap-2 overflow-hidden border border-[#C49A4A]/70 bg-gradient-to-r from-[#8F2528] to-[#542027] px-4 py-2 font-bold tracking-wider text-[#F4E9D2] shadow-[0_0_12px_rgba(196,154,74,0.15)] transition-all duration-300 hover:border-[#E2C99A] hover:shadow-[0_0_18px_rgba(196,154,74,0.35)] hover:text-[#E2C99A]">
 
-                <a href="{% url 'personajes' %}"
-                   class="border-b-2 border-transparent px-3 py-3 transition hover:border-[#C49A4A] hover:bg-[#F4E9D2]/5 hover:text-[#E2C99A]">
-                    PERSONAJES
-                </a>
+                <span class="text-[#C49A4A] transition-transform duration-300 group-hover:scale-125">
+                    ♛
+                </span>
 
-                <a href="{% url 'wiki' %}"
-                   class="border-b-2 border-transparent px-3 py-3 transition hover:border-[#C49A4A] hover:bg-[#F4E9D2]/5 hover:text-[#E2C99A]">
-                    WIKI
-                </a>
+                TOP GLOBAL
 
-                <a href="#"
-                   class="border-2 border-[#C49A4A] bg-[#8F2528] px-4 py-3 font-bold text-[#F4E9D2] shadow-[3px_3px_0_#111827] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none">
-                    INICIAR SESIÓN
-                </a>
+                <span class="absolute bottom-0 left-0 h-[2px] w-0 bg-[#E2C99A] transition-all duration-300 group-hover:w-full"></span>
+            </a>
 
-            </div>
-        </nav>
+            <a href="{% url 'juegos' %}" class="border-b-2 border-transparent px-2 py-2 transition hover:border-[#C49A4A] hover:text-[#E2C99A] md:px-3">
+                JUEGOS
+            </a>
 
-        <!-- Separador ornamental -->
-        <div class="flex items-center justify-center gap-3 pb-2 text-[#C49A4A]">
-            <span class="h-px w-12 bg-[#C49A4A]/60"></span>
-            <span class="font-mono text-xs">◆ ◇ ◆</span>
-            <span class="h-px w-12 bg-[#C49A4A]/60"></span>
         </div>
-    </header>
+    </nav>
+
+    <div class="flex items-center justify-center gap-3 pb-2 text-[#C49A4A]">
+        <span class="h-px w-8 bg-[#C49A4A]/60"></span>
+        <span class="font-mono text-[10px]">◆ ◇ ◆</span>
+        <span class="h-px w-8 bg-[#C49A4A]/60"></span>
+    </div>
+
+</header>
+
 
     <!-- Contenido de cada página -->
-    <main class="relative z-0 flex-1">
+    <main class="relative z-0 flex-1 pt-28">
         {% block contenido %}
         {% endblock %}
     </main>
@@ -110,13 +113,13 @@
             </p>
 
             <p class="max-w-lg text-sm leading-6 text-[#D5C8AD]">
-                Un mundo olvidado. Un panteón caído. Una historia que aún espera ser descubierta.
+                 Un mundo marcado por grietas divinas. Aspectos perdidos. Un camino hacia lo desconocido.
             </p>
 
             <div class="my-2 h-px w-24 bg-[#8F2528]"></div>
 
             <p class="font-mono text-xs text-[#A9A6A0]">
-                THE UNWRITTEN PANTHEON · 2026
+                 GODS UNMADE · 2026
             </p>
 
         </div>

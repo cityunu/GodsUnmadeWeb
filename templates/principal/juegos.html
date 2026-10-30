@@ -1,5 +1,425 @@
+
 {% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Juegos | SixSevenGames{% endblock %}
 
 {% block contenido %}
+
+<!-- PORTADA -->
+<section class="relative overflow-hidden border-b-2 border-[#C49A4A]/60 bg-[#171C2A]">
+    <div
+        class="absolute inset-0 bg-cover bg-center opacity-25"
+        style="background-image: url('{% static 'img/fondo-lore.png' %}');">
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-[#171C2A]/30 via-[#171C2A]/60 to-[#171C2A]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-20 text-center md:py-28">
+        <p class="mb-4 font-mono text-xs tracking-[0.4em] text-[#C49A4A]">
+            SIXSEVENGAMES PRESENTA
+        </p>
+
+        <h1 class="font-mono text-4xl font-black tracking-wider text-[#F4E9D2] md:text-7xl">
+            NUESTROS JUEGOS
+        </h1>
+
+        <div class="my-6 flex items-center justify-center gap-4 text-[#C49A4A]">
+            <span class="h-px w-12 bg-[#C49A4A] md:w-20"></span>
+            ◆ ◇ ◆
+            <span class="h-px w-12 bg-[#C49A4A] md:w-20"></span>
+        </div>
+
+        <p class="mx-auto max-w-2xl text-base leading-8 text-[#D5C8AD] md:text-lg">
+            Historias por descubrir, mundos por explorar y nuevas aventuras
+            en desarrollo. Conoce nuestros proyectos y descubre lo que viene.
+        </p>
+    </div>
+</section>
+
+<!-- JUEGO PRINCIPAL -->
+<section class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+    <div class="mb-8 flex items-center gap-4">
+        <span class="h-10 w-2 bg-[#8F2528]"></span>
+        <div>
+            <p class="font-mono text-xs tracking-[0.25em] text-[#C49A4A]">
+                PROYECTO DESTACADO
+            </p>
+            <h2 class="mt-1 font-mono text-2xl font-bold text-[#F4E9D2] md:text-3xl">
+                Nuestro juego principal
+            </h2>
+        </div>
+    </div>
+
+    <article class="grid overflow-hidden border-2 border-[#C49A4A]/70 bg-[#202B40] md:grid-cols-2">
+
+        <!-- Imagen del juego -->
+        <div class="relative flex min-h-[300px] items-center justify-center overflow-hidden border-b-2 border-[#C49A4A]/50 bg-[#171C2A] p-6 md:border-b-0 md:border-r-2">
+            <img
+                src="{% static 'img/fondo-lore.png' %}"
+                alt="Escenario de Gods Unmade"
+                class="absolute inset-0 h-full w-full object-cover opacity-50"
+                onerror="this.style.display='none'">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-[#171C2A] via-transparent to-[#171C2A]/30"></div>
+
+            <div class="relative z-10 border-2 border-[#C49A4A]/70 bg-[#171C2A]/80 px-5 py-8 text-center shadow-[6px_6px_0_#8F2528]">
+                <p class="font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                    SIXSEVENGAMES
+                </p>
+                <p class="mt-3 font-mono text-3xl font-black tracking-wider text-[#F4E9D2] md:text-4xl">
+                    GODS<br>UNMADE
+                </p>
+                <p class="mt-3 font-mono text-xs tracking-widest text-[#D5C8AD]">
+                    UNA NUEVA AVENTURA
+                </p>
+            </div>
+        </div>
+
+        <!-- Información -->
+        <div class="flex flex-col justify-center p-7 md:p-10">
+            <span class="mb-4 w-fit border border-[#8F2528] bg-[#8F2528]/20 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                EN DESARROLLO
+            </span>
+
+            <h3 class="font-mono text-3xl font-black text-[#F4E9D2] md:text-4xl">
+                Gods Unmade
+            </h3>
+
+            <p class="mt-5 leading-8 text-[#D5C8AD]">
+                Una aventura de exploración y combate inspirada en la
+                mitología griega. Recorre el mundo del juego, descubre
+                sus secretos y desbloquea habilidades para avanzar.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="border border-[#C49A4A]/50 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                    METROIDVANIA
+                </span>
+                <span class="border border-[#C49A4A]/50 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                    EXPLORACIÓN
+                </span>
+                <span class="border border-[#C49A4A]/50 px-3 py-2 font-mono text-xs text-[#E2C99A]">
+                    AVENTURA
+                </span>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="{% url 'historia' %}"
+                   class="border-2 border-[#C49A4A] bg-[#8F2528] px-5 py-3 font-mono text-sm font-bold text-[#F4E9D2] shadow-[4px_4px_0_#C49A4A] transition hover:translate-y-1 hover:shadow-none">
+                    DESCUBRIR LA HISTORIA
+                </a>
+
+                <a href="{% url 'personajes' %}"
+                   class="border-2 border-[#C49A4A]/60 px-5 py-3 font-mono text-sm font-bold text-[#F4E9D2] transition hover:bg-[#C49A4A] hover:text-[#171C2A]">
+                    PERSONAJES
+                </a>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- PRÓXIMAMENTE EN STEAM -->
+<section class="border-y-2 border-[#C49A4A]/50 bg-[#171C2A]">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-12 text-center md:flex-row md:justify-center md:gap-10 md:py-14">
+
+       <div class="flex h-16 w-16 shrink-0 items-center justify-center border border-[#C49A4A]/50 bg-[#202B40] p-3">
+            <img
+                src="{% static 'img/steam-logo.png' %}"
+                alt="Logo de Steam"
+                class="h-8 w-8 object-contain"
+                onerror="this.style.display='none'">
+        </div>
+
+        <div class="max-w-2xl">
+            <p class="font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                PRÓXIMO LANZAMIENTO
+            </p>
+
+            <h2 class="mt-2 font-mono text-2xl font-black text-[#F4E9D2] md:text-3xl">
+                Próximamente en Steam
+            </h2>
+
+            <p class="mt-3 leading-7 text-[#B9B1A2]">
+                Gods Unmade llegará próximamente a Steam.
+                Mantente al tanto de nuestras novedades para conocer
+                más información sobre su lanzamiento.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPO DE DESARROLLO -->
+<section id="equipo" class="border-t-2 border-[#C49A4A]/50 bg-[#202B40]/50">
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+
+        <!-- Encabezado -->
+        <div class="mx-auto mb-12 max-w-3xl text-center">
+            <p class="mb-3 font-mono text-xs tracking-[0.35em] text-[#C49A4A]">
+                DETRÁS DE CADA PROYECTO
+            </p>
+
+            <h2 class="font-mono text-3xl font-black tracking-wide text-[#F4E9D2] md:text-5xl">
+                CONOCE AL EQUIPO
+            </h2>
+
+            <div class="my-6 flex items-center justify-center gap-3 text-[#C49A4A]">
+                <span class="h-px w-12 bg-[#C49A4A]"></span>
+                ◆ ◇ ◆
+                <span class="h-px w-12 bg-[#C49A4A]"></span>
+            </div>
+
+            <p class="leading-8 text-[#B9B1A2]">
+                Somos SixSevenGames, un equipo de cinco integrantes que
+                trabaja en la creación de experiencias interactivas,
+                mundos por explorar e historias por descubrir.
+            </p>
+        </div>
+
+        <!-- Tarjetas del equipo -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Integrante 1: Gael -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="mx-auto h-28 w-28 overflow-hidden border-2 border-[#C49A4A] bg-[#263E5C]">
+                    <img src="{% static 'img/equipo/gael.jpg' %}"
+                         alt="Roberto Gael Aguilar Lopez"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+                </div>
+
+                <p class="mt-5 font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                    INTEGRANTE 01
+                </p>
+
+                <h3 class="mt-3 font-mono text-lg font-bold leading-7 text-[#F4E9D2]">
+                    Roberto Gael Aguilar Lopez
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                    Equipo de desarrollo de SixSevenGames.
+                </p>
+            </article>
+
+            <!-- Integrante 2: Lesly -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="mx-auto h-28 w-28 overflow-hidden border-2 border-[#C49A4A] bg-[#40242C]">
+                    <img src="{% static 'img/equipo/lesly.jpg' %}"
+                         alt="Lesly Citlally Alvarado García"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+                </div>
+
+                <p class="mt-5 font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                    INTEGRANTE 02
+                </p>
+
+                <h3 class="mt-3 font-mono text-lg font-bold leading-7 text-[#F4E9D2]">
+                    Lesly Citlally Alvarado García
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                    Equipo de desarrollo de SixSevenGames.
+                </p>
+            </article>
+
+            <!-- Integrante 3: Ernesto -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="mx-auto h-28 w-28 overflow-hidden border-2 border-[#C49A4A] bg-[#49402B]">
+                    <img src="{% static 'img/equipo/ernesto.jpg' %}"
+                         alt="Ernesto Antonio Avellaneda Avila"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+                </div>
+
+                <p class="mt-5 font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                    INTEGRANTE 03
+                </p>
+
+                <h3 class="mt-3 font-mono text-lg font-bold leading-7 text-[#F4E9D2]">
+                    Ernesto Antonio Avellaneda Avila
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                    Equipo de desarrollo de SixSevenGames.
+                </p>
+            </article>
+
+            <!-- Integrante 4: Ángel -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="mx-auto h-28 w-28 overflow-hidden border-2 border-[#C49A4A] bg-[#263E5C]">
+                    <img src="{% static 'img/equipo/angel.jpg' %}"
+                         alt="Angel Javier Correa Ziranda"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+                </div>
+
+                <p class="mt-5 font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                    INTEGRANTE 04
+                </p>
+
+                <h3 class="mt-3 font-mono text-lg font-bold leading-7 text-[#F4E9D2]">
+                    Angel Javier Correa Ziranda
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                    Equipo de desarrollo de SixSevenGames.
+                </p>
+            </article>
+
+            <!-- Integrante 5: Paulina -->
+            <article class="group border-2 border-[#C49A4A]/40 bg-[#171C2A] p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528] sm:col-span-2 lg:col-span-1">
+
+                <div class="mx-auto h-28 w-28 overflow-hidden border-2 border-[#C49A4A] bg-[#40242C]">
+                    <img src="{% static 'img/equipo/paulina.jpg' %}"
+                         alt="Paulina Hernandez Trejo"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+                </div>
+
+                <p class="mt-5 font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                    INTEGRANTE 05
+                </p>
+
+                <h3 class="mt-3 font-mono text-lg font-bold leading-7 text-[#F4E9D2]">
+                    Paulina Hernandez Trejo
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-[#B9B1A2]">
+                    Equipo de desarrollo de SixSevenGames.
+                </p>
+            </article>
+
+        </div>
+
+        <!-- Pie de la sección -->
+        <div class="mt-10 border-t border-[#C49A4A]/30 pt-6 text-center">
+            <p class="font-mono text-xs tracking-[0.2em] text-[#C49A4A]">
+                SIXSEVENGAMES · CINCO INTEGRANTES · UN MISMO PROYECTO
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRÓXIMOS LANZAMIENTOS -->
+<section class="border-y-2 border-[#C49A4A]/50 bg-[#202B40]/70">
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+
+        <div class="mb-10">
+            <p class="mb-3 font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
+                EL FUTURO DEL ESTUDIO
+            </p>
+
+            <h2 class="font-mono text-2xl font-black text-[#F4E9D2] md:text-4xl">
+                Próximamente...
+            </h2>
+
+            <p class="mt-4 max-w-2xl leading-8 text-[#B9B1A2]">
+                Estamos preparando nuevas ideas y proyectos.
+                Por ahora, sus detalles permanecen en secreto.
+                ¡Mantente al tanto de las próximas novedades de SixSevenGames!
+            </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- PROYECTO FUTURO 1 -->
+            <article class="group overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+                <div class="relative flex h-52 items-center justify-center overflow-hidden bg-[#263E5C]/40">
+                    <div class="absolute inset-4 border border-dashed border-[#C49A4A]/40"></div>
+                    <span class="font-mono text-6xl text-[#C49A4A]/60 transition group-hover:scale-110">?</span>
+                    <span class="absolute bottom-3 right-3 font-mono text-[10px] tracking-widest text-[#C49A4A]">
+                        PROYECTO 002
+                    </span>
+                </div>
+
+                <div class="p-5">
+                    <span class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        EN PLANIFICACIÓN
+                    </span>
+                    <h3 class="mt-3 font-mono text-xl font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
+                        Un nuevo proyecto de SixSevenGames.
+                        Más detalles serán revelados próximamente.
+                    </p>
+                </div>
+            </article>
+
+            <!-- PROYECTO FUTURO 2 -->
+            <article class="group overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+                <div class="relative flex h-52 items-center justify-center overflow-hidden bg-[#40242C]/40">
+                    <div class="absolute inset-4 border border-dashed border-[#C49A4A]/40"></div>
+                    <span class="font-mono text-6xl text-[#C49A4A]/60 transition group-hover:scale-110">?</span>
+                    <span class="absolute bottom-3 right-3 font-mono text-[10px] tracking-widest text-[#C49A4A]">
+                        PROYECTO 003
+                    </span>
+                </div>
+
+                <div class="p-5">
+                    <span class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        EN DESARROLLO FUTURO
+                    </span>
+                    <h3 class="mt-3 font-mono text-xl font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
+                        Nuevas ideas y experiencias están por llegar.
+                        La información se publicará cuando esté disponible.
+                    </p>
+                </div>
+            </article>
+
+            <!-- PROYECTO FUTURO 3 -->
+            <article class="group overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528] sm:col-span-2 lg:col-span-1">
+                <div class="relative flex h-52 items-center justify-center overflow-hidden bg-[#49402B]/30">
+                    <div class="absolute inset-4 border border-dashed border-[#C49A4A]/40"></div>
+                    <span class="font-mono text-6xl text-[#C49A4A]/60 transition group-hover:scale-110">?</span>
+                    <span class="absolute bottom-3 right-3 font-mono text-[10px] tracking-widest text-[#C49A4A]">
+                        PROYECTO 004
+                    </span>
+                </div>
+
+                <div class="p-5">
+                    <span class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
+                        MÁS POR DESCUBRIR
+                    </span>
+                    <h3 class="mt-3 font-mono text-xl font-bold text-[#F4E9D2]">
+                        Próximamente
+                    </h3>
+                    <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
+                        Este espacio está reservado para otro futuro
+                        lanzamiento del estudio.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- CIERRE -->
+<section class="bg-[#171C2A]">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center md:py-20">
+        <p class="font-mono text-xs tracking-[0.4em] text-[#C49A4A]">
+            SIXSEVENGAMES
+        </p>
+
+        <h2 class="mt-4 font-mono text-2xl font-black text-[#F4E9D2] md:text-4xl">
+            Esto apenas comienza.
+        </h2>
+
+        <p class="mx-auto mt-4 max-w-xl leading-8 text-[#B9B1A2]">
+            Cada proyecto es una nueva oportunidad para crear mundos,
+            contar historias y compartir aventuras.
+        </p>
+
+        <a href="{% url 'inicio' %}"
+           class="mt-8 inline-block border-2 border-[#C49A4A] px-6 py-3 font-mono text-sm font-bold text-[#F4E9D2] transition hover:bg-[#C49A4A] hover:text-[#171C2A]">
+            VOLVER AL INICIO
+        </a>
+    </div>
+</section>
 
 {% endblock %}
