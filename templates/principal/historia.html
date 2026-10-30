@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -31,8 +30,10 @@
         </div>
 
         <p class="mx-auto max-w-2xl text-base leading-8 text-[#D5C8AD] md:text-lg">
-            Cada mundo guarda secretos, recuerdos y relatos por descubrir.
-            Explora la historia de Gods Unmade y conoce su universo.
+            Los dioses pierden fragmentos de su identidad y sus poderes, conocidos
+            como Aspectos Divinos. Esta pérdida altera templos, caminos y guardianes
+            sagrados. Explora el mundo de Gods Unmade y descubre qué se oculta detrás
+            de esta fractura.
         </p>
 
         <a href="#sinopsis"
@@ -47,18 +48,20 @@
     <div class="grid items-center gap-10 md:grid-cols-2 md:gap-14">
 
         <!-- Imagen de apoyo -->
-        <div class="relative min-h-[300px] overflow-hidden border-2 border-[#C49A4A]/60 bg-[#202B40] p-3">
-            <div class="absolute inset-3 border border-[#8F2528]/70"></div>
+        <div class="group relative min-h-[300px] overflow-hidden border-2 border-[#C49A4A]/60 bg-[#202B40] p-3 transition duration-500 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+            <div class="pointer-events-none absolute inset-3 z-10 border border-[#8F2528]/70"></div>
 
             <img
-                src="{% static 'img/fondo-lore.png' %}"
+                src="{% static 'img/histo/historia.jpg' %}"
                 alt="Escenario del universo de Gods Unmade"
-                class="absolute inset-0 h-full w-full object-cover opacity-50"
-                onerror="this.style.display='none'">
+                class="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-700 ease-out group-hover:scale-105 group-hover:opacity-80"
+                onerror="this.style.display='none'"
+            >
 
-            <div class="absolute inset-0 bg-gradient-to-t from-[#171C2A] via-transparent to-[#171C2A]/20"></div>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#171C2A] via-[#171C2A]/30 to-[#171C2A]/10"></div>
 
-            <div class="absolute bottom-8 left-8 right-8">
+            <div class="absolute bottom-8 left-8 right-8 z-20">
                 <p class="font-mono text-xs tracking-[0.3em] text-[#C49A4A]">
                     ARCHIVO NARRATIVO
                 </p>
@@ -83,17 +86,21 @@
             </div>
 
             <p class="leading-8 text-[#D5C8AD]">
-                En este espacio se presentará la sinopsis oficial de
-                Gods Unmade, incluyendo el contexto de la historia,
-                su punto de partida y los elementos principales de su trama.
+                Los dioses comienzan a perder fragmentos de su identidad y sus poderes,
+                conocidos como Aspectos Divinos. Su pérdida altera templos, caminos y
+                guardianes sagrados. En medio de este desequilibrio, un ser semihumano
+                marcado por grietas divinas emprende un recorrido para encontrar y
+                restaurar estos fragmentos.
             </p>
 
             <div class="mt-6 border-l-4 border-[#C49A4A] bg-[#202B40] p-5">
                 <p class="font-mono text-xs tracking-wider text-[#C49A4A]">
-                    SINOPSIS OFICIAL
+                    OBJETIVO DE LA DEMO
                 </p>
                 <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
-                    Contenido pendiente de confirmar con el equipo de desarrollo.
+                    Explorar las ruinas, encontrar el Aspecto Divino de Hermes y
+                    recuperarlo para desbloquear la habilidad de dash y acceder
+                    a caminos que antes estaban bloqueados.
                 </p>
             </div>
         </div>
@@ -114,66 +121,115 @@
             </h2>
 
             <p class="mt-4 leading-8 text-[#B9B1A2]">
-                Conoce el trasfondo del mundo, sus acontecimientos y los
-                elementos que dan forma a la narrativa del juego.
+                La historia se desarrolla en un mundo inspirado en la mitología griega,
+                donde la pérdida de los Aspectos Divinos altera los lugares sagrados
+                y convierte la exploración en parte esencial del recorrido.
             </p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-3">
 
-            <!-- Tarjeta 1 -->
-            <article class="border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
-                <div class="flex h-40 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/50">
-                    <span class="font-mono text-5xl text-[#C49A4A]/70">I</span>
+            <!-- Tarjeta 1: La pérdida de los Aspectos Divinos -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#263E5C]/50">
+                    <img
+                        src="{% static 'img/histo/fractura-panteon.jpg' %}"
+                        alt="Ruinas que representan la pérdida de los Aspectos Divinos"
+                        class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <div class="absolute inset-0 hidden items-center justify-center">
+                        <span class="font-mono text-5xl text-[#C49A4A]/70">I</span>
+                    </div>
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#171C2A]/70 to-transparent"></div>
                 </div>
+
                 <div class="p-5">
                     <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
                         REGISTRO 001
                     </p>
+
                     <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                        Origen del mundo
+                        La pérdida de los Aspectos Divinos
                     </h3>
+
                     <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
-                        Aquí se describirá el origen y el contexto del universo
-                        según la historia oficial.
+                        Los dioses pierden fragmentos de su identidad y sus poderes.
+                        Esta alteración afecta los templos, los caminos y a los
+                        guardianes sagrados.
                     </p>
                 </div>
             </article>
 
-            <!-- Tarjeta 2 -->
-            <article class="border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
-                <div class="flex h-40 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#40242C]/40">
-                    <span class="font-mono text-5xl text-[#C49A4A]/70">II</span>
+            <!-- Tarjeta 2: El camino del protagonista -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#40242C]/40">
+                    <img
+                        src="{% static 'img/histo/camino-protagonista.jpg' %}"
+                        alt="El protagonista recorriendo las ruinas"
+                        class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <div class="absolute inset-0 hidden items-center justify-center">
+                        <span class="font-mono text-5xl text-[#C49A4A]/70">II</span>
+                    </div>
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#171C2A]/70 to-transparent"></div>
                 </div>
+
                 <div class="p-5">
                     <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
                         REGISTRO 002
                     </p>
+
                     <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                        Acontecimientos
+                        El camino del protagonista
                     </h3>
+
                     <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
-                        Se añadirán los sucesos importantes que forman parte
-                        de la trama del videojuego.
+                        Marcado por grietas divinas, el protagonista posee la capacidad
+                        de encontrar y restaurar los Aspectos Divinos perdidos. Su
+                        recorrido comienza en las ruinas de Camino Roto.
                     </p>
                 </div>
             </article>
 
-            <!-- Tarjeta 3 -->
-            <article class="border-2 border-[#C49A4A]/40 bg-[#171C2A] transition hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
-                <div class="flex h-40 items-center justify-center border-b-2 border-[#C49A4A]/40 bg-[#49402B]/30">
-                    <span class="font-mono text-5xl text-[#C49A4A]/70">III</span>
+            <!-- Tarjeta 3: El Aspecto de Hermes -->
+            <article class="group min-w-0 overflow-hidden border-2 border-[#C49A4A]/40 bg-[#171C2A] transition duration-300 hover:-translate-y-1 hover:border-[#C49A4A] hover:shadow-[5px_5px_0_#8F2528]">
+
+                <div class="relative h-48 overflow-hidden border-b-2 border-[#C49A4A]/40 bg-[#49402B]/30">
+                    <img
+                        src="{% static 'img/histo/aspecto-hermes.jpg' %}"
+                        alt="Santuario de Hermes en Gods Unmade"
+                        class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <div class="absolute inset-0 hidden items-center justify-center">
+                        <span class="font-mono text-5xl text-[#C49A4A]/70">III</span>
+                    </div>
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#171C2A]/70 to-transparent"></div>
                 </div>
+
                 <div class="p-5">
                     <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
                         REGISTRO 003
                     </p>
+
                     <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                        Misterios por descubrir
+                        El Aspecto de Hermes
                     </h3>
+
                     <p class="mt-3 text-sm leading-7 text-[#B9B1A2]">
-                        Este apartado reunirá los secretos y detalles narrativos
-                        que se confirmen para el juego.
+                        Durante la demo, el protagonista encuentra el Aspecto Divino
+                        de Hermes. Al recuperarlo, desbloquea el dash, una habilidad
+                        necesaria para superar obstáculos y continuar explorando.
                     </p>
                 </div>
             </article>
@@ -190,12 +246,14 @@
         </p>
 
         <h2 class="font-mono text-2xl font-black text-[#F4E9D2] md:text-4xl">
-            Los capítulos de la historia
+            El recorrido de la demo
         </h2>
 
         <p class="mx-auto mt-4 max-w-2xl leading-8 text-[#B9B1A2]">
-            Este espacio podrá mostrar los capítulos, etapas o momentos
-            narrativos principales cuando estén definidos por el equipo.
+            La demo sigue el inicio del recorrido del protagonista en Camino Roto:
+            desde la exploración de las ruinas y los primeros combates hasta la
+            recuperación del Aspecto Divino de Hermes y el descubrimiento de una
+            amenaza mayor.
         </p>
     </div>
 
@@ -209,13 +267,15 @@
             </div>
             <div class="flex-1 border border-[#C49A4A]/40 bg-[#202B40] p-5">
                 <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
-                    CAPÍTULO POR DEFINIR
+                    ETAPA 01
                 </p>
                 <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                    Primeros acontecimientos
+                    Camino Roto
                 </h3>
                 <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
-                    Aquí se incorporará la información del inicio de la trama.
+                    El recorrido comienza en Camino Roto, una región de ruinas y santuarios.
+                    El jugador explora sus espacios conectados, enfrenta enemigos y busca
+                    rutas para continuar avanzando.
                 </p>
             </div>
         </article>
@@ -227,14 +287,15 @@
             </div>
             <div class="flex-1 border border-[#C49A4A]/40 bg-[#202B40] p-5">
                 <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
-                    CAPÍTULO POR DEFINIR
+                    ETAPA 02
                 </p>
                 <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                    Desarrollo de la historia
+                    Santuario de Hermes
                 </h3>
                 <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
-                    Este apartado se completará con los acontecimientos
-                    posteriores que establezca la narrativa oficial.
+                    El protagonista encuentra y recupera el Aspecto Divino de Hermes.
+                    Al hacerlo, desbloquea el dash, una habilidad que le permite superar
+                    obstáculos y acceder a caminos que antes estaban bloqueados.
                 </p>
             </div>
         </article>
@@ -246,14 +307,15 @@
             </div>
             <div class="flex-1 border border-[#C49A4A]/40 bg-[#202B40] p-5">
                 <p class="font-mono text-[10px] tracking-[0.25em] text-[#C49A4A]">
-                    CAPÍTULO POR DEFINIR
+                    CIERRE DE LA DEMO
                 </p>
                 <h3 class="mt-2 font-mono text-lg font-bold text-[#F4E9D2]">
-                    Desenlace o continuación
+                    Una amenaza por descubrir
                 </h3>
                 <p class="mt-2 text-sm leading-7 text-[#B9B1A2]">
-                    El contenido se añadirá cuando se confirme cómo se
-                    estructura esta parte de la historia.
+                    Tras obtener el dash, el jugador continúa explorando y llega a un
+                    encuentro importante que marca el cierre narrativo de esta región
+                    y revela que existe una amenaza mayor detrás de la fractura divina.
                 </p>
             </div>
         </article>
@@ -268,11 +330,12 @@
         </p>
 
         <h2 class="mt-4 font-mono text-2xl font-black text-[#F4E9D2] md:text-3xl">
-            Cada fragmento forma parte del relato.
+            La búsqueda de los Aspectos Divinos apenas comienza.
         </h2>
 
         <p class="mx-auto mt-4 max-w-xl leading-7 text-[#B9B1A2]">
-            Explora las demás secciones para conocer el proyecto y su universo.
+            Conoce a los personajes y guardianes que forman parte del recorrido
+            del protagonista.
         </p>
 
         <a href="{% url 'personajes' %}"
